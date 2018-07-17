@@ -1,0 +1,11 @@
+version: '3.1'
+services:
+  jupyter:
+    build: .
+    command: jupyter lab --ip=0.0.0.0 --allow-root
+    environment:
+      - PHISHTANK_API_KEY
+    ports:
+      - 8890:8888
+    volumes:
+      - .:/usr/src/app
